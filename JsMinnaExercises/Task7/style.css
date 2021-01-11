@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
+
+*, html{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: #f9d342;
+    text-decoration: none;
+    line-height: 100%;
+    padding: 0 .7rem;
+}
+
+a:hover{
+    padding-bottom: .4rem;
+    transition: all .1s ease-in-out;
+    border-bottom: 4px solid #f9d342;
+}
+
+.fa-weebly{
+    color: #ffffff;
+    font-size: 2rem;
+}
+
+.logo-text{
+    font-family: 'Piedra', cursive;
+}
+
+.dot{
+    color: #f9d342;
+}
+
+.fa-weebly::before{
+    color: #f9d342;
+    font-size: 3rem;
+}
+
+nav{
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    min-height: 10vh;
+    background-color: #292826;
+    position: relative;
+}
+
+nav > div.logo{
+    width: 30%;
+    height: 100%;
+}
+
+nav > .links{
+    width: 60%;
+}
+
+nav > .links ul{
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+nav > .links ul li{
+    margin-left: 2rem;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    line-height: 100%;
+}
+
+nav .hamburger{
+    display: none;
+}
+
+
+@media screen and (max-width: 830px) {
+
+    nav.none{
+        padding-left: 0;
+    }
+
+    nav > div.logo.none {
+        display: none;
+    }
+
+
+    nav > .links ul{
+        position: fixed;
+        background-color: #292826;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 100vw;
+        height: 100vh;
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -10%);
+        transition: all 1s ease-out;
+    }
+
+    nav > .links ul.open{
+        clip-path: circle(1000px at 90% -10%);
+        -webkit-clip-path: circle(1000px at 90% -10%);
+    }
+
+    nav > .links ul li{
+        margin-left: 0;
+        z-index: 2;
+    }
+
+    nav > .links .hamburger{
+        display: block;
+        color: #f9d342;
+        font-size: 1.2rem;   
+    }
+
+    nav > .links .hamburger .fa-spider{
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      z-index: 99999;
+      transform: translate(-50%, -50%);
+    }
+}
